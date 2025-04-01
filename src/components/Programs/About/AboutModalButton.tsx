@@ -9,6 +9,7 @@ export const AboutModalButton = () => {
   const [state, dispatch] = useContext<any>(StoreContext);
 
   const _handleClick = () => {
+    if (!state.visiblePrograms)
     dispatch({ type: 'SET_ACTIVE_MODAL', payload: EPrograms.ABOUT });
     dispatch({ type: 'SET_VISIBLE_PROGRAM', payload: {program: EPrograms.ABOUT, state: !state.visiblePrograms[EPrograms.ABOUT]} });
   };

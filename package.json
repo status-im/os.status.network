@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@acid-info/webcave-react": "1.0.2-alpha.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "ofetch": "^1.3.3",
     "pick-deep": "^1.0.0",
     "query-string": "^8.1.0",

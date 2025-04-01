@@ -9,7 +9,11 @@ export const RemixModal = () => {
       program={EPrograms.REMIX}
       programLabel={"IDE"}
     >
-      <iframe src={REMIX_LINK} height="600" width="1000"/>
+      <iframe
+        src={REMIX_LINK}
+        height="600"
+        width="1000"
+      />
     </ProgramModal>
   )
 };

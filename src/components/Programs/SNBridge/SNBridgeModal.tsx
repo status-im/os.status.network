@@ -7,7 +7,14 @@ export const SNBridgeModal = () => {
       program={EPrograms.SN_BRIDGE}
       programLabel={"SN Bridge"}
     >
-      <iframe src="https://bridge.status.network" height="600" width="1000"/>
+      <iframe
+        src="https://bridge.status.network"
+        height="600"
+        width="1000"
+        style={{
+          filter: "grayscale(100%) contrast(200%) brightness(80%)"
+        }}
+      />
     </ProgramModal>
   )
 };

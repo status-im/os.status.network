@@ -12,6 +12,8 @@ import Store from './store';
 import { AboutModal } from './components/Programs/About/AboutModal.tsx';
 import { Menu } from './components/Menu';
 import { AboutModalButton } from './components/Programs/About/AboutModalButton.tsx';
+import {WebCaveModalButton} from "./components/Programs/WebCave/WebCaveModalButton.tsx";
+import {WebCaveModal} from "./components/Programs/WebCave/WebCaveModal.tsx";
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -40,15 +42,17 @@ function App() {
       <ThemeProvider theme={original}>
         <nav>
           <AppBar style={{ zIndex: 3 }}>
-            <Toolbar style={{ justifyContent: 'space-between' }}>
+            <Toolbar>
               <Menu />
               <AboutModalButton />
+              <WebCaveModalButton />
             </Toolbar>
           </AppBar>
         </nav>
         <main>
           <div className="container pt4">
             <AboutModal />
+            <WebCaveModal />
           </div>
         </main>
       </ThemeProvider>

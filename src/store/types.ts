@@ -1,7 +1,15 @@
 export type AppState = {
     menu: boolean,
-    aboutModal: boolean,
-    activeModal: string,
-    hideAboutModalButton: boolean,
-    tab: number
+    visiblePrograms: {
+        [key in EPrograms]?: boolean
+    },
+    openPrograms: {
+        [key in EPrograms]?: boolean
+    },
+    activeProgram?: EPrograms,
+}
+
+export enum EPrograms {
+    ABOUT = "ABOUT",
+    WEB_CAVE = "WEB_CAVE"
 }

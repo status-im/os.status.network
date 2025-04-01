@@ -3,10 +3,9 @@ import {AppState} from "./types.ts";
 
 const initialState: AppState = {
   menu: false,
-  aboutModal: false,
-  activeModal: '',
-  hideAboutModalButton: true,
-  tab: 0,
+  visiblePrograms: {},
+  openPrograms: {},
+  activeProgram: undefined
 };
 
 export const StoreContext = createContext({});
@@ -18,35 +17,33 @@ function reducer(state, action) {
         ...state,
         menu: action.payload,
       };
-    case 'SET_ABOUT_MODAL':
-      action.payload && setBodyOverflow('hidden');
+    case 'SET_VISIBLE_PROGRAM': {
       return {
         ...state,
-        aboutModal: action.payload,
-      };
-    case 'SET_TAB':
+        visiblePrograms: {
+          ...state.visiblePrograms,
+          [action.payload.program]: action.payload.state
+        }
+      }
+    }
+    case 'SET_OPEN_PROGRAM': {
       return {
         ...state,
-        tab: action.payload,
-      };
-    case 'SET_ACTIVE_MODAL':
+        openPrograms: {
+          ...state.openPrograms,
+          [action.payload.program]: action.payload.state
+        }
+      }
+    }
+    case 'SET_ACTIVE_PROGRAM': {
       return {
         ...state,
-        activeModal: action.payload,
-      };
-    case 'SET_HIDE_ABOUT_MODAL_BUTTON':
-      action.payload && setBodyOverflow('visible');
-      return {
-        ...state,
-        hideAboutModalButton: action.payload,
-      };
+        activeProgram: action.payload
+      }
+    }
     default:
       return state;
   }
-}
-
-function setBodyOverflow(property) {
-  document.body.style.overflow = property;
 }
 
 const Store = ({ children }) => {

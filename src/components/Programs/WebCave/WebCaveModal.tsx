@@ -3,16 +3,16 @@ import { Window, WindowContent, WindowHeader, Button } from 'react95';
 import { StoreContext } from '../../../store';
 import {EPrograms} from "../../../store/types.ts";
 
-export const AboutModal = () => {
+export const WebCaveModal = () => {
   const [state, dispatch] = useContext<any>(StoreContext);
 
   const _handleClose = () => {
-    dispatch({ type: 'SET_OPEN_PROGRAM', payload: {program: EPrograms.ABOUT, state: false}});
-    dispatch({ type: 'SET_VISIBLE_PROGRAM', payload: {program: EPrograms.ABOUT, state: false}});
+    dispatch({ type: 'SET_OPEN_PROGRAM', payload: {program: EPrograms.WEB_CAVE, state: false}});
+    dispatch({ type: 'SET_VISIBLE_PROGRAM', payload: {program: EPrograms.WEB_CAVE, state: false}});
   };
 
   const _handleClick = () => {
-    dispatch({ type: 'SET_ACTIVE_MODAL', payload: EPrograms.ABOUT });
+    dispatch({ type: 'SET_ACTIVE_MODAL', payload: EPrograms.WEB_CAVE });
   };
 
   return (
@@ -22,24 +22,22 @@ export const AboutModal = () => {
         width: 300,
         maxWidth: '94%',
         maxHeight: '100%',
-        zIndex: state.activeModal === EPrograms.ABOUT ? 2 : 1,
+        zIndex: state.activeModal === EPrograms.WEB_CAVE ? 2 : 1,
         position: 'fixed',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        display: state.visiblePrograms[EPrograms.ABOUT] ? 'block' : 'none',
+        display: state.visiblePrograms[EPrograms.WEB_CAVE] ? 'block' : 'none',
       }}
     >
       <WindowHeader className="flex items-center justify-between">
-        <span>About</span>
+        <span>WebCave</span>
         <Button onClick={_handleClose}>
           <span style={{ fontWeight: 'bold', transform: 'translateY(-1px)' }}>x</span>
         </Button>
       </WindowHeader>
       <WindowContent>
-        <p className="h1">Status Network</p>
-        <p className="mt2">The gas-less network with sustainable funding for app builders</p>
-        <p className="mt2">Launch and scale your social apps and games with truly free transactions.</p>
+        test
       </WindowContent>
     </Window>
   );

@@ -1,10 +1,12 @@
-import { useContext } from 'react';
-import { StoreContext } from '../store/index.js';
-import { Button, MenuList, MenuListItem } from 'react95';
+import {useContext} from 'react';
+import {StoreContext} from '../store/index.js';
+import {Button, MenuList, MenuListItem} from 'react95';
 import ClickAwayListener from 'react-click-away-listener';
 
 import SnLogo from '../assets/snlogo.png';
 import ComputerImage from '../assets/computer.png';
+import WebCaveImage from '../assets/webcave.png';
+import {EPrograms} from "../store/types.ts";
 
 export const Menu = () => {
   const [state, dispatch] = useContext<any>(StoreContext);
@@ -17,12 +19,10 @@ export const Menu = () => {
     dispatch({ type: 'SET_MENU', payload: false });
   };
 
-  const _handleListItemClick = (name: string) => {
-    if (name === 'about') {
-      dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'about' });
-      dispatch({ type: 'SET_ABOUT_MODAL', payload: true });
-      dispatch({ type: 'SET_HIDE_ABOUT_MODAL_BUTTON', payload: false });
-    }
+  const _handleListItemClick = (program: EPrograms) => {
+    dispatch({ type: 'SET_ACTIVE_PROGRAM', payload: program });
+    dispatch({ type: 'SET_OPEN_PROGRAM', payload: {program, state: true} });
+    dispatch({ type: 'SET_VISIBLE_PROGRAM', payload: {program, state: true} });
   };
 
   const _handleClickAway = () => {
@@ -36,9 +36,13 @@ export const Menu = () => {
       {state.menu ? (
         <ClickAwayListener onClickAway={_handleClickAway}>
           <MenuList style={{ position: 'absolute', left: '0', top: '100%' }} onClick={_handleClose}>
-            <MenuListItem onClick={() => _handleListItemClick('about')}>
+            <MenuListItem onClick={() => _handleListItemClick(EPrograms.ABOUT)}>
               <img style={{ width: 22, marginRight: 8 }} src={ComputerImage} alt="aboutLogo" />
               <span>About</span>
+            </MenuListItem>
+            <MenuListItem onClick={() => _handleListItemClick(EPrograms.WEB_CAVE)}>
+              <img style={{width: 22, marginRight: 8}} src={WebCaveImage} alt="webcaveLogo"/>
+              <span>WebCave</span>
             </MenuListItem>
           </MenuList>
         </ClickAwayListener>

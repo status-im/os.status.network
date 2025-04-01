@@ -3,19 +3,20 @@ import { StoreContext } from '../../../store';
 import { Button } from 'react95';
 
 import ComputerImage from '../../../assets/computer.png';
+import {EPrograms} from "../../../store/types.ts";
 
 export const AboutModalButton = () => {
   const [state, dispatch] = useContext<any>(StoreContext);
 
   const _handleClick = () => {
-    dispatch({ type: 'SET_ACTIVE_MODAL', payload: 'about' });
-    dispatch({ type: 'SET_ABOUT_MODAL', payload: !state.aboutModal });
+    dispatch({ type: 'SET_ACTIVE_MODAL', payload: EPrograms.ABOUT });
+    dispatch({ type: 'SET_VISIBLE_PROGRAM', payload: {program: EPrograms.ABOUT, state: !state.visiblePrograms[EPrograms.ABOUT]} });
   };
 
-  return !state.hideAboutModalButton ? (
+  return state.openPrograms[EPrograms.ABOUT] ? (
     <Button
       onClick={_handleClick}
-      active={state.aboutModal}
+      active={state.visiblePrograms[EPrograms.ABOUT]}
       className="bold"
       style={{ marginRight: 3 }}
     >

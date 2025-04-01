@@ -8,16 +8,20 @@ import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 
 import Store from './store';
 
-// Components
-import {AboutModal} from './components/Programs/About/AboutModal.tsx';
-import {Menu} from './components/Menu';
-import {WebCaveModal} from "./components/Programs/WebCave/WebCaveModal.tsx";
-import {ProgramBarButton} from "./components/ProgramBarButton/ProgramBarButton.tsx";
+// Programs
 import {EPrograms} from "./store/types.ts";
+import {AboutModal} from './components/Programs/About/AboutModal.tsx';
+import {WebCaveModal} from "./components/Programs/WebCave/WebCaveModal.tsx";
+import {SNBridgeModal} from "./components/Programs/SNBridge/SNBridgeModal.tsx";
+
+// Components
+import {Menu} from './components/Menu';
+import {ProgramBarButton} from "./components/ProgramBarButton/ProgramBarButton.tsx";
 
 // Logos
 import ComputerLogo from "./assets/computer.png";
 import WebCaveLogo from "./assets/webcave.png";
+import BridgeLogo from "./assets/bridge.png";
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -57,6 +61,11 @@ function App() {
                 programLogo={WebCaveLogo}
                 programLabel="WebCave"
               />
+              <ProgramBarButton
+                program={EPrograms.SN_BRIDGE}
+                programLogo={BridgeLogo}
+                programLabel="SN Bridge"
+              />
             </Toolbar>
           </AppBar>
         </nav>
@@ -64,6 +73,7 @@ function App() {
           <div className="container pt4">
             <AboutModal />
             <WebCaveModal />
+            <SNBridgeModal />
           </div>
         </main>
       </ThemeProvider>

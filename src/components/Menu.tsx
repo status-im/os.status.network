@@ -6,6 +6,8 @@ import ClickAwayListener from 'react-click-away-listener';
 import SnLogo from '../assets/snlogo.png';
 import ComputerImage from '../assets/computer.png';
 import WebCaveImage from '../assets/webcave.png';
+import BridgeLogo from "../assets/bridge.png";
+
 import {EPrograms} from "../store/types.ts";
 
 export const Menu = () => {
@@ -43,6 +45,10 @@ export const Menu = () => {
             <MenuListItem onClick={() => _handleListItemClick(EPrograms.WEB_CAVE)}>
               <img style={{width: 22, marginRight: 8}} src={WebCaveImage} alt="webcaveLogo"/>
               <span>WebCave</span>
+            </MenuListItem>
+            <MenuListItem onClick={() => _handleListItemClick(EPrograms.SN_BRIDGE)}>
+              <img style={{width: 22, marginRight: 8}} src={BridgeLogo} alt="snBridgeLogo"/>
+              <span>SN Bridge</span>
             </MenuListItem>
           </MenuList>
         </ClickAwayListener>

@@ -9,9 +9,9 @@ import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 import Store from './store';
 
 // Components
-import { AboutModal } from './components/AboutModal';
+import { AboutModal } from './components/Programs/About/AboutModal.tsx';
 import { Menu } from './components/Menu';
-import { AboutModalButton } from './components/AboutModalButton';
+import { AboutModalButton } from './components/Programs/About/AboutModalButton.tsx';
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}

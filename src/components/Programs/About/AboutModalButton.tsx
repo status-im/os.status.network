@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { StoreContext } from '../store/index.js';
+import { StoreContext } from '../../../store';
 import { Button } from 'react95';
 
-import ComputerImage from '../assets/computer.png';
+import ComputerImage from '../../../assets/computer.png';
 
 export const AboutModalButton = () => {
   const [state, dispatch] = useContext<any>(StoreContext);

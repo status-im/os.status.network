@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Window, WindowContent, WindowHeader, Button } from 'react95';
-import { StoreContext } from '../store/index.js';
+import { StoreContext } from '../../../store';
 
 export const AboutModal = () => {
   const [state, dispatch] = useContext<any>(StoreContext);
@@ -37,9 +37,8 @@ export const AboutModal = () => {
       </WindowHeader>
       <WindowContent>
         <p className="h1">Status Network</p>
-        <p className="mt2">The gasless network
-          with sustainable funding for app builders
-          Launch and scale your social apps and games with truly free transactions.</p>
+        <p className="mt2">The gas-less network with sustainable funding for app builders</p>
+        <p className="mt2">Launch and scale your social apps and games with truly free transactions.</p>
       </WindowContent>
     </Window>
   );

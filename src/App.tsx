@@ -22,6 +22,9 @@ import {ProgramBarButton} from "./components/ProgramBarButton/ProgramBarButton.t
 import ComputerLogo from "./assets/computer.png";
 import WebCaveLogo from "./assets/webcave.png";
 import BridgeLogo from "./assets/bridge.png";
+import IDELogo from './assets/ide.png';
+import {RemixModal} from "./components/Programs/Remix/RemixModal.tsx";
+
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -66,6 +69,11 @@ function App() {
                 programLogo={BridgeLogo}
                 programLabel="SN Bridge"
               />
+              <ProgramBarButton
+                program={EPrograms.REMIX}
+                programLogo={IDELogo}
+                programLabel="IDE"
+              />
             </Toolbar>
           </AppBar>
         </nav>
@@ -74,6 +82,7 @@ function App() {
             <AboutModal />
             <WebCaveModal />
             <SNBridgeModal />
+            <RemixModal />
           </div>
         </main>
       </ThemeProvider>

@@ -13,4 +13,5 @@ export enum EPrograms {
     ABOUT = "ABOUT",
     WEB_CAVE = "WEB_CAVE",
     SN_BRIDGE = "SN_BRIDGE",
+    REMIX = "REMIX"
 }

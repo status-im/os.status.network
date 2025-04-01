@@ -7,6 +7,7 @@ import SnLogo from '../assets/snlogo.png';
 import ComputerImage from '../assets/computer.png';
 import WebCaveImage from '../assets/webcave.png';
 import BridgeLogo from "../assets/bridge.png";
+import IDELogo from '../assets/ide.png';
 
 import {EPrograms} from "../store/types.ts";
 
@@ -49,6 +50,10 @@ export const Menu = () => {
             <MenuListItem onClick={() => _handleListItemClick(EPrograms.SN_BRIDGE)}>
               <img style={{width: 22, marginRight: 8}} src={BridgeLogo} alt="snBridgeLogo"/>
               <span>SN Bridge</span>
+            </MenuListItem>
+            <MenuListItem onClick={() => _handleListItemClick(EPrograms.REMIX)}>
+              <img style={{width: 22, marginRight: 8}} src={IDELogo} alt="ideLogo"/>
+              <span>IDE</span>
             </MenuListItem>
           </MenuList>
         </ClickAwayListener>

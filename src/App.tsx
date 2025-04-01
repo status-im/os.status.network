@@ -1,6 +1,6 @@
 import './App.css';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { styleReset, AppBar, Toolbar } from 'react95';
+import {createGlobalStyle, ThemeProvider} from 'styled-components';
+import {AppBar, styleReset, Toolbar} from 'react95';
 
 import original from 'react95/dist/themes/original';
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
@@ -9,11 +9,15 @@ import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 import Store from './store';
 
 // Components
-import { AboutModal } from './components/Programs/About/AboutModal.tsx';
-import { Menu } from './components/Menu';
-import { AboutModalButton } from './components/Programs/About/AboutModalButton.tsx';
-import {WebCaveModalButton} from "./components/Programs/WebCave/WebCaveModalButton.tsx";
+import {AboutModal} from './components/Programs/About/AboutModal.tsx';
+import {Menu} from './components/Menu';
 import {WebCaveModal} from "./components/Programs/WebCave/WebCaveModal.tsx";
+import {ProgramBarButton} from "./components/ProgramBarButton/ProgramBarButton.tsx";
+import {EPrograms} from "./store/types.ts";
+
+// Logos
+import ComputerLogo from "./assets/computer.png";
+import WebCaveLogo from "./assets/webcave.png";
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -43,8 +47,16 @@ function App() {
           <AppBar style={{ zIndex: 3 }}>
             <Toolbar>
               <Menu />
-              <AboutModalButton />
-              <WebCaveModalButton />
+              <ProgramBarButton
+                program={EPrograms.ABOUT}
+                programLogo={ComputerLogo}
+                programLabel="About"
+              />
+              <ProgramBarButton
+                program={EPrograms.WEB_CAVE}
+                programLogo={WebCaveLogo}
+                programLabel="WebCave"
+              />
             </Toolbar>
           </AppBar>
         </nav>

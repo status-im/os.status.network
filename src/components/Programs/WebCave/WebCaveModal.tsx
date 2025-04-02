@@ -25,14 +25,15 @@ export const WebCaveModal = () => {
       programLabel={"WebCave"}
     >
       <div>
-        <WebCave
-          chunkSize={8}
-          worldSize={64}
-          worldSeed="cyprien"
-          texturePack={TEXTURE_PACK}
-          height={'500px'}
-          width={'800px'}
-        />
+        {/*<WebCave*/}
+        {/*  chunkSize={8}*/}
+        {/*  worldSize={64}*/}
+        {/*  worldSeed="cyprien"*/}
+        {/*  texturePack={TEXTURE_PACK}*/}
+        {/*  height={'500px'}*/}
+        {/*  width={'800px'}*/}
+        {/*/>*/}
+        WebCave coming soon
       </div>
     </ProgramModal>
   );

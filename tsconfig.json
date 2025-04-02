@@ -1,26 +1,52 @@
 {
   "compilerOptions": {
+    /* Emit */
     "target": "ES2020",
-    "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "declaration": true,
+    // These two options will be selectively overridden in each project.
+    // Utility libraries will have source maps on, but plugins will not.
+    "declarationMap": false,
+    "sourceMap": false,
+    "jsx": "react",
+    "module": "esnext",
     "noEmit": true,
-    "jsx": "react-jsx",
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    /* Strict Type-Checking Options */
+    "allowUnreachableCode": false,
+    // Too hard to turn on
+    "exactOptionalPropertyTypes": false,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    /* strict family */
+    "strict": true,
+    "alwaysStrict": true,
     "noImplicitAny": false,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "useUnknownInCatchVariables": true,
+    /* Handled by ESLint */
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "importsNotUsedAsValues": "remove",
+
+    /* Module Resolution */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "allowJs": true,
+    "allowImportingTsExtensions": false,
+    "skipLibCheck": true // @types/webpack and webpack/types.d.ts are not the same thing
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": [
+    "node_modules",
+  ]
 }

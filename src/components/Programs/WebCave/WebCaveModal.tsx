@@ -1,14 +1,17 @@
-import {EPrograms} from "../../../store/types.ts";
+import React from "react";
+
+import {EPrograms} from "../../../store/types";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import styled from "styled-components";
 import { WebCave } from "@acid-info/webcave-react"
 
 import BackgroundTexture from "../../../assets/webcave/background.png"
 import BlockThumbsTexture from "../../../assets/webcave/blockthumbs.png"
 import PlayerTexture from "../../../assets/webcave/player.png"
 import TerrainTexture from "../../../assets/webcave/terrain.png"
-import { TexturePack } from '@acid-info/webcave-react/src'
-import ProgramModal from "../../ProgramModal/ProgramModal.tsx";
+import ProgramModal from "../../ProgramModal/ProgramModal";
 
-export const TEXTURE_PACK: TexturePack = {
+export const TEXTURE_PACK = {
   terrain: TerrainTexture,
   player: PlayerTexture,
   backgroundImage: BackgroundTexture,

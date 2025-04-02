@@ -1,7 +1,7 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { StoreContext } from '../../store';
 import { Button } from 'react95';
-import {EPrograms} from "../../store/types.ts";
+import {EPrograms} from "../../store/types";
 
 export type ProgramBarButtonProps = {
   program: EPrograms,
@@ -19,8 +19,10 @@ export const ProgramBarButton: React.FC<ProgramBarButtonProps> = (props) => {
   const [state, dispatch] = useContext<any>(StoreContext);
 
   const _handleClick = () => {
-    if (!state.visiblePrograms)
+    if (!state.visiblePrograms[program]) {
       dispatch({ type: 'SET_ACTIVE_MODAL', payload: program });
+    }
+
     dispatch({ type: 'SET_VISIBLE_PROGRAM', payload: {program: program, state: !state.visiblePrograms[program]} });
   };
 

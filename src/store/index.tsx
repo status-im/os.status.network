@@ -1,5 +1,6 @@
+import React from "react";
 import { createContext, useReducer } from 'react';
-import {AppState} from "./types.ts";
+import {AppState} from "./types";
 
 const initialState: AppState = {
   menu: false,

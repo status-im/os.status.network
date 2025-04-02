@@ -1,6 +1,6 @@
 import React, {PropsWithChildren, useContext} from "react";
 import {StoreContext} from "../../store";
-import {EPrograms} from "../../store/types.ts";
+import {EPrograms} from "../../store/types";
 import {Button, Window, WindowContent, WindowHeader} from "react95";
 
 export type ProgramModalProps = {
@@ -38,7 +38,7 @@ const ProgramModal: React.FC<PropsWithChildren<ProgramModalProps>> = (props) => 
         width,
         maxWidth: '94%',
         maxHeight: '100%',
-        zIndex: state.activeModal === program ? 2 : 1,
+        zIndex: state.activeProgram === program ? 2 : 1,
         position: 'fixed',
         top: '50%',
         left: '50%',

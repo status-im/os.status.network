@@ -1,5 +1,6 @@
-import {EPrograms} from "../../../store/types.ts";
-import ProgramModal from "../../ProgramModal/ProgramModal.tsx";
+import React from "react";
+import {EPrograms} from "../../../store/types";
+import ProgramModal from "../../ProgramModal/ProgramModal";
 
 export const SNBridgeModal = () => {
   return (

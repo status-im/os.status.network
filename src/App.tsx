@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import {createGlobalStyle, ThemeProvider} from 'styled-components';
 import {AppBar, styleReset, Toolbar} from 'react95';
@@ -9,21 +10,21 @@ import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 import Store from './store';
 
 // Programs
-import {EPrograms} from "./store/types.ts";
-import {AboutModal} from './components/Programs/About/AboutModal.tsx';
-import {WebCaveModal} from "./components/Programs/WebCave/WebCaveModal.tsx";
-import {SNBridgeModal} from "./components/Programs/SNBridge/SNBridgeModal.tsx";
+import {EPrograms} from "./store/types";
+import {AboutModal} from './components/Programs/About/AboutModal';
+import {WebCaveModal} from "./components/Programs/WebCave/WebCaveModal";
+import {SNBridgeModal} from "./components/Programs/SNBridge/SNBridgeModal";
 
 // Components
 import {Menu} from './components/Menu';
-import {ProgramBarButton} from "./components/ProgramBarButton/ProgramBarButton.tsx";
+import {ProgramBarButton} from "./components/ProgramBarButton/ProgramBarButton";
 
 // Logos
 import ComputerLogo from "./assets/computer.png";
 import WebCaveLogo from "./assets/webcave.png";
 import BridgeLogo from "./assets/bridge.png";
 import IDELogo from './assets/ide.png';
-import {RemixModal} from "./components/Programs/Remix/RemixModal.tsx";
+import {RemixModal} from "./components/Programs/Remix/RemixModal";
 
 
 const GlobalStyles = createGlobalStyle`

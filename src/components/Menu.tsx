@@ -1,5 +1,7 @@
+import React from "react";
+
 import {useContext} from 'react';
-import {StoreContext} from '../store/index.js';
+import {StoreContext} from '../store/index';
 import {Button, MenuList, MenuListItem} from 'react95';
 import ClickAwayListener from 'react-click-away-listener';
 
@@ -9,7 +11,7 @@ import WebCaveImage from '../assets/webcave.png';
 import BridgeLogo from "../assets/bridge.png";
 import IDELogo from '../assets/ide.png';
 
-import {EPrograms} from "../store/types.ts";
+import {EPrograms} from "../store/types";
 
 export const Menu = () => {
   const [state, dispatch] = useContext<any>(StoreContext);

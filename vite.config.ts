@@ -8,5 +8,6 @@ export default defineConfig({
   ],
   optimizeDeps: {
     include: ['alea']
-  }
+  },
+  base: "/sn-os/"
 })

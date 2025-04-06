@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  ssr: {
-    noExternal: ['styled-components']
+  optimizeDeps: {
+    include: ['alea']
   }
 })

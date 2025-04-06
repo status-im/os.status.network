@@ -2,7 +2,7 @@ import React from "react";
 
 import {useContext} from 'react';
 import {StoreContext} from '../../store';
-import {Button, MenuList, MenuListItem} from 'react95';
+import {Button, MenuList, MenuListItem, Separator} from 'react95';
 import ClickAwayListener from 'react-click-away-listener';
 
 import SnLogo from '../../assets/snlogo.png';
@@ -45,6 +45,7 @@ export const Menu = () => {
               <img style={{ width: 22, marginRight: 8 }} src={ComputerImage} alt="aboutLogo" />
               <span>About</span>
             </MenuListItem>
+            <Separator/>
             <MenuListItem onClick={() => _handleListItemClick(EPrograms.WEB_CAVE)}>
               <img style={{width: 22, marginRight: 8}} src={WebCaveImage} alt="webcaveLogo"/>
               <span>WebCave</span>

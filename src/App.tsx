@@ -16,7 +16,7 @@ import {WebCaveModal} from "./components/Programs/WebCave/WebCaveModal";
 import {SNBridgeModal} from "./components/Programs/SNBridge/SNBridgeModal";
 
 // Components
-import {Menu} from './components/Menu';
+import {Menu} from './components/Menu/Menu';
 import {ProgramBarButton} from "./components/ProgramBarButton/ProgramBarButton";
 
 // Logos
@@ -84,6 +84,7 @@ function App() {
             <WebCaveModal />
             <SNBridgeModal />
             <RemixModal />
+
           </div>
         </main>
       </ThemeProvider>

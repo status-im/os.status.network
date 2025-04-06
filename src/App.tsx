@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {createGlobalStyle, ThemeProvider} from 'styled-components';
-import {AppBar, styleReset, Toolbar} from 'react95';
+import {AppBar, styleReset, Toolbar, Window, WindowHeader, WindowContent, TextInput, Button} from 'react95';
 
 import original from 'react95/dist/themes/original';
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
@@ -16,7 +16,7 @@ import {WebCaveModal} from "./components/Programs/WebCave/WebCaveModal";
 import {SNBridgeModal} from "./components/Programs/SNBridge/SNBridgeModal";
 
 // Components
-import {Menu} from './components/Menu';
+import {Menu} from './components/Menu/Menu';
 import {ProgramBarButton} from "./components/ProgramBarButton/ProgramBarButton";
 
 // Logos
@@ -25,6 +25,8 @@ import WebCaveLogo from "./assets/webcave.png";
 import BridgeLogo from "./assets/bridge.png";
 import IDELogo from './assets/ide.png';
 import {RemixModal} from "./components/Programs/Remix/RemixModal";
+import DesktopIcons from "./components/DesktopIcons/DesktopIcons";
+import StartupSound from "./components/StatrupSound/StartupSound";
 
 
 const GlobalStyles = createGlobalStyle`
@@ -44,48 +46,86 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'ms_sans_serif';
   }
+  #root {
+      width: 100%;
+      height: 100%;
+  }
 `;
 
 function App() {
+  const [login, setLogin] = useState(false);
+
+
+
   return (
     <Store>
       <GlobalStyles />
       <ThemeProvider theme={original}>
-        <nav>
-          <AppBar style={{ zIndex: 3 }}>
-            <Toolbar>
-              <Menu />
-              <ProgramBarButton
-                program={EPrograms.ABOUT}
-                programLogo={ComputerLogo}
-                programLabel="About"
-              />
-              <ProgramBarButton
-                program={EPrograms.WEB_CAVE}
-                programLogo={WebCaveLogo}
-                programLabel="WebCave"
-              />
-              <ProgramBarButton
-                program={EPrograms.SN_BRIDGE}
-                programLogo={BridgeLogo}
-                programLabel="SN Bridge"
-              />
-              <ProgramBarButton
-                program={EPrograms.REMIX}
-                programLogo={IDELogo}
-                programLabel="IDE"
-              />
-            </Toolbar>
-          </AppBar>
-        </nav>
-        <main>
-          <div className="container pt4">
-            <AboutModal />
-            <WebCaveModal />
-            <SNBridgeModal />
-            <RemixModal />
-          </div>
-        </main>
+        {
+          login ?
+            <>
+              <nav>
+                <AppBar style={{zIndex: 3}}>
+                  <Toolbar>
+                    <Menu/>
+                    <ProgramBarButton
+                      program={EPrograms.ABOUT}
+                      programLogo={ComputerLogo}
+                      programLabel="About"
+                    />
+                    <ProgramBarButton
+                      program={EPrograms.WEB_CAVE}
+                      programLogo={WebCaveLogo}
+                      programLabel="WebCave"
+                    />
+                    <ProgramBarButton
+                      program={EPrograms.SN_BRIDGE}
+                      programLogo={BridgeLogo}
+                      programLabel="SN Bridge"
+                    />
+                    <ProgramBarButton
+                      program={EPrograms.REMIX}
+                      programLogo={IDELogo}
+                      programLabel="IDE"
+                    />
+                  </Toolbar>
+                </AppBar>
+              </nav>
+              <main>
+                <div className="pt4 pl2 pr2">
+                  <AboutModal/>
+                  <WebCaveModal/>
+                  <SNBridgeModal/>
+                  <RemixModal/>
+                  <DesktopIcons/>
+                </div>
+                <StartupSound/>
+              </main>
+            </>
+            :
+            <Window
+              style={{
+                width: 200,
+                height: 200,
+                top: '30%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <WindowHeader className="flex items-center justify-between">
+                <span>Status Network OS</span>
+              </WindowHeader>
+              <WindowContent>
+                User: based_gang
+                <TextInput placeholder={"Password"}/>
+              </WindowContent>
+              <Button onClick={() => setLogin(true)}>
+                Login
+              </Button>
+            </Window>
+        }
       </ThemeProvider>
     </Store>
   );

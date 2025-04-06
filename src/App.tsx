@@ -25,6 +25,7 @@ import WebCaveLogo from "./assets/webcave.png";
 import BridgeLogo from "./assets/bridge.png";
 import IDELogo from './assets/ide.png';
 import {RemixModal} from "./components/Programs/Remix/RemixModal";
+import DesktopIcons from "./components/DesktopIcons/DesktopIcons";
 
 
 const GlobalStyles = createGlobalStyle`
@@ -79,12 +80,12 @@ function App() {
           </AppBar>
         </nav>
         <main>
-          <div className="container pt4">
+          <div className="pt4 pl2 pr2">
             <AboutModal />
             <WebCaveModal />
             <SNBridgeModal />
             <RemixModal />
-
+            <DesktopIcons/>
           </div>
         </main>
       </ThemeProvider>

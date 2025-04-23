@@ -25,10 +25,12 @@ import WebCaveLogo from "./assets/webcave.png";
 import BridgeLogo from "./assets/bridge.png";
 import IDELogo from './assets/ide.png';
 import RakiaLogo from "./assets/rakia.png";
+import SNTLogo from "./assets/snt.png"
 import {RemixModal} from "./components/Programs/Remix/RemixModal";
 import DesktopIcons from "./components/DesktopIcons/DesktopIcons";
 import StartupSound from "./components/StatrupSound/StartupSound";
 import {RakiaSplitModal} from "./components/Programs/RakiaSplit/RakiaSplitModal";
+import {StakingModal} from "./components/Programs/Staking/StakingModal";
 
 
 const GlobalStyles = createGlobalStyle`
@@ -81,6 +83,11 @@ function App() {
                       programLabel="Rakia"
                     />
                     <ProgramBarButton
+                      program={EPrograms.STAKING}
+                      programLogo={SNTLogo}
+                      programLabel="SNT Staking"
+                    />
+                    <ProgramBarButton
                       program={EPrograms.WEB_CAVE}
                       programLogo={WebCaveLogo}
                       programLabel="WebCave"
@@ -102,6 +109,7 @@ function App() {
                 <div className="pt4 pl2 pr2">
                   <AboutModal/>
                   <RakiaSplitModal/>
+                  <StakingModal/>
                   <WebCaveModal/>
                   <SNBridgeModal/>
                   <RemixModal/>

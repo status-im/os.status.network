@@ -14,5 +14,6 @@ export enum EPrograms {
     WEB_CAVE = "WEB_CAVE",
     SN_BRIDGE = "SN_BRIDGE",
     REMIX = "REMIX",
-    RAKIA = "RAKIA"
+    RAKIA = "RAKIA",
+    STAKING = "STAKING"
 }

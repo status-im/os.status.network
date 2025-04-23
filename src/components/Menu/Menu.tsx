@@ -8,6 +8,7 @@ import ClickAwayListener from 'react-click-away-listener';
 import SnLogo from '../../assets/snlogo.png';
 import ComputerImage from '../../assets/computer.png';
 import RakiaLogo from "../../assets/rakia.png"
+import SNT from "../../assets/snt.png"
 import WebCaveImage from '../../assets/webcave.png';
 import BridgeLogo from "../../assets/bridge.png";
 import IDELogo from '../../assets/ide.png';
@@ -50,6 +51,10 @@ export const Menu = () => {
             <MenuListItem onClick={() => _handleListItemClick(EPrograms.RAKIA)}>
               <img style={{width: 22, marginRight: 8}} src={RakiaLogo} alt="rakiaLogo"/>
               <span>Rakia Split</span>
+            </MenuListItem>
+            <MenuListItem onClick={() => _handleListItemClick(EPrograms.STAKING)}>
+              <img style={{width: 22, marginRight: 8}} src={SNT} alt="sntLogo"/>
+              <span>SNT Staking</span>
             </MenuListItem>
             <MenuListItem onClick={() => _handleListItemClick(EPrograms.WEB_CAVE)}>
               <img style={{width: 22, marginRight: 8}} src={WebCaveImage} alt="webcaveLogo"/>

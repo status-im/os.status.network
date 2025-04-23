@@ -24,9 +24,11 @@ import ComputerLogo from "./assets/computer.png";
 import WebCaveLogo from "./assets/webcave.png";
 import BridgeLogo from "./assets/bridge.png";
 import IDELogo from './assets/ide.png';
+import RakiaLogo from "./assets/rakia.png";
 import {RemixModal} from "./components/Programs/Remix/RemixModal";
 import DesktopIcons from "./components/DesktopIcons/DesktopIcons";
 import StartupSound from "./components/StatrupSound/StartupSound";
+import {RakiaSplitModal} from "./components/Programs/RakiaSplit/RakiaSplitModal";
 
 
 const GlobalStyles = createGlobalStyle`
@@ -74,6 +76,11 @@ function App() {
                       programLabel="About"
                     />
                     <ProgramBarButton
+                      program={EPrograms.RAKIA}
+                      programLogo={RakiaLogo}
+                      programLabel="Rakia"
+                    />
+                    <ProgramBarButton
                       program={EPrograms.WEB_CAVE}
                       programLogo={WebCaveLogo}
                       programLabel="WebCave"
@@ -94,6 +101,7 @@ function App() {
               <main>
                 <div className="pt4 pl2 pr2">
                   <AboutModal/>
+                  <RakiaSplitModal/>
                   <WebCaveModal/>
                   <SNBridgeModal/>
                   <RemixModal/>

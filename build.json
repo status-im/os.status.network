@@ -1,0 +1,15 @@
+{
+    "timestamp": "2025-09-24T12:32:17Z",
+    "git": {
+        "commit": "25fef112751ec9d08eb335284f4457faffa623c2",
+        "branch": "origin/develop",
+        "url": "git@github.com:status-im/os.status.network.git"
+    },
+    "build": {
+        "id": "6",
+        "number": "6",
+        "name": "website/os.status.network",
+        "slave": "linux-02",
+        "url": "https://ci.infra.status.im/job/website/job/os.status.network/6/"
+    }
+}
